@@ -30,6 +30,14 @@ android {
 
 dependencies {
 
+    //room
+    implementation ("androidx.room:room-runtime:2.6.1")
+    annotationProcessor ("androidx.room:room-compiler:2.6.1")
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
