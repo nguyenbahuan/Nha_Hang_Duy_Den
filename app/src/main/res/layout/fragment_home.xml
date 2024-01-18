@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/container"
+        >
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="28sp" />
+
+        <RelativeLayout
+            android:id="@+id/layoutButton"
+            android:layout_width="401dp"
+            android:layout_height="108dp"
+            android:layout_below="@+id/text_home">
+
+            <ImageButton
+                android:id="@+id/img_btn_statistical"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thong_ke" />
+
+            <TextView
+                android:id="@+id/txt_statistical"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_below="@+id/img_btn_statistical"
+                android:layout_marginStart="30dp"
+                android:text="Thống kê" />
+
+            <ImageButton
+                android:id="@+id/img_btn_table"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@id/img_btn_statistical"
+                android:scaleType="centerCrop"
+
+
+                android:src="@drawable/ban_an" />
+
+            <TextView
+                android:id="@+id/txt_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_btn_table"
+                android:layout_marginStart="32dp"
+                android:layout_toRightOf="@id/img_btn_statistical"
+                android:text="Bàn ăn" />
+
+            <ImageButton
+                android:id="@+id/img_btn_menu"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@id/img_btn_table"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thuc_don" />
+
+            <TextView
+                android:id="@+id/txt_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_btn_menu"
+                android:layout_marginStart="32dp"
+                android:layout_toRightOf="@id/img_btn_table"
+                android:text="Thực đơn" />
+
+            <ImageButton
+                android:id="@+id/img_btn_staff"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@id/img_btn_menu"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nhan_vien" />
+
+            <TextView
+                android:id="@+id/txt_staff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_btn_staff"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@id/img_btn_menu"
+                android:text="Nhân viên" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/layoutButton"
+            android:layout_centerInParent="true"
+            android:background="#c0c0c0" />
+        <RelativeLayout
+            android:id="@+id/listMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/layoutButton">
+
+
+
+            <TextView
+                android:id="@+id/textListMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textColor="#164863"
+                android:textFontWeight="500"
+                android:layout_marginStart="20dp"
+                android:text="Menu Nhà Hàng" />
+            <TextView
+                android:id="@+id/txtShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/textListMenu"
+                android:layout_alignBottom="@id/textListMenu"
+                android:layout_marginLeft="100dp"
+                android:lineBreakWordStyle="phrase"
+                android:textSize="16dp"
+                android:text="Xem tất cả" />
+
+
+
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/imgBtnShow"
+            android:layout_width="373dp"
+            android:layout_height="215dp"
+            android:layout_below="@+id/listMenu"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/mon_an"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mon_an" />
+    </RelativeLayout>
+
+</FrameLayout>

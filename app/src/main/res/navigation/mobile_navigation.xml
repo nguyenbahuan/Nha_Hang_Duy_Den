@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/tableFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.TableFragment"
+        android:label="fragment_table"
+        tools:layout="@layout/fragment_table" />
+    <fragment
+        android:id="@+id/staffFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.StaffFragment"
+        android:label="fragment_staff"
+        tools:layout="@layout/fragment_staff" />
+    <fragment
+        android:id="@+id/statisticalFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.StatisticalFragment"
+        android:label="fragment_statistical"
+        tools:layout="@layout/fragment_statistical" />
+</navigation>
