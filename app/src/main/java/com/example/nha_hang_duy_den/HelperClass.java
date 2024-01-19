@@ -44,4 +44,5 @@ public class HelperClass {
         this.password = password;
         this.phone = phone;
     }
+    public HelperClass(){}
 }

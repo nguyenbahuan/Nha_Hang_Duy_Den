@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.BillFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_bill_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_pink_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rcv_bill_table"
+            app:layout_constraintVertical_bias="0.729"
+            tools:layout_editor_absoluteX="16dp">
+
+            <TextView
+                android:id="@+id/txt_pay"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:text="Tổng tiền :"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:id="@+id/txt_total"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="10dp"
+                android:text="100001111"
+                android:textSize="20dp"
+                android:layout_below="@id/txt_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btn_pay_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginBottom="250dp"
+                android:layout_toRightOf="@id/txt_pay"
+                android:gravity="center"
+                android:text="Thanh toán">
+
+            </Button>
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

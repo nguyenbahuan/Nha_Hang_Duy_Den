@@ -35,4 +35,14 @@
         android:name="com.example.nha_hang_duy_den.fragment.AddFoodFragment"
         android:label="fragment_add_food"
         tools:layout="@layout/fragment_add_food" />
+    <fragment
+        android:id="@+id/billFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.BillFragment"
+        android:label="fragment_bill"
+        tools:layout="@layout/fragment_bill" />
+    <fragment
+        android:id="@+id/addTableFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.AddTableFragment"
+        android:label="fragment_add_table"
+        tools:layout="@layout/fragment_add_table" />
 </navigation>

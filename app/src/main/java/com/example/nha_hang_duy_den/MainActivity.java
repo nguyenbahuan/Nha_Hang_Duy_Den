@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,11 +20,15 @@ import com.example.nha_hang_duy_den.fragment.StaffFragment;
 import com.example.nha_hang_duy_den.fragment.StatisticalFragment;
 import com.example.nha_hang_duy_den.fragment.TableFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    FirebaseAuth mAuth;
+    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.fragment_layout, new HomeFragment())
                     .commit();
         }
+//        firebaseUser = mAuth.getCurrentUser();
+//        if(firebaseUser == null) {
+//            Intent intent = new Intent(getApplicationContext(), login.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -64,7 +75,10 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     fragmentR(new StaffFragment());
                 }else if (id == R.id.nav_logout) {
-
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getApplicationContext(), login.class);
+                    startActivity(intent);
+                    finish();
                 }
                 return true;
             }});

@@ -10,6 +10,20 @@ public class Bill {
     int id;
     @ColumnInfo(name = "table_name")
     String table;
+    @ColumnInfo(name = "list_food")
+    String listFood;
+    @ColumnInfo(name = "total")
+    String total;
+    @ColumnInfo(name = "date")
+    String date;
+
+    public String getListFood() {
+        return listFood;
+    }
+
+    public void setListFood(String listFood) {
+        this.listFood = listFood;
+    }
 
     public String getTable() {
         return table;
@@ -27,10 +41,6 @@ public class Bill {
         this.total = total;
     }
 
-    @ColumnInfo(name = "total")
-    String total;
-    @ColumnInfo(name = "date")
-    String date;
 
 
     public int getId() {

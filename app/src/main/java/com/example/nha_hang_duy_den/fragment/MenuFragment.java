@@ -28,6 +28,7 @@ public class MenuFragment extends Fragment {
     MenuAdapter menuAdapter;
     RecyclerView recViewMenu;
     FloatingActionButton btnAddMenu;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +59,20 @@ public class MenuFragment extends Fragment {
         //
         AppDatabase db = AppDatabase.getInstance(context);
         List<Menu> menuList = db.menuDao().getAllMenus();
-
         menuAdapter = new MenuAdapter(context);
-        menuAdapter.setMenuList(menuList);
-        recViewMenu.setAdapter(menuAdapter);
+
+        Bundle bundle = getArguments();
+        String data;
+        if(bundle != null) {
+            data = bundle.getString("Key");
+            menuAdapter.setBundle(data);
+            menuAdapter.setMenuList(menuList);
+            recViewMenu.setAdapter(menuAdapter);
+        }else {
+            menuAdapter.setBundle("Chưa chọn");
+            menuAdapter.setMenuList(menuList);
+            recViewMenu.setAdapter(menuAdapter);
+        }
         return view;
     }
 }

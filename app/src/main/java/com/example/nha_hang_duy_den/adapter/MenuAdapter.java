@@ -1,11 +1,19 @@
 package com.example.nha_hang_duy_den.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
@@ -25,6 +33,7 @@ import com.example.nha_hang_duy_den.database.AppDatabase;
 import com.example.nha_hang_duy_den.database.entity.Menu;
 import com.example.nha_hang_duy_den.fragment.EditFoodFragment;
 import com.example.nha_hang_duy_den.fragment.MenuFragment;
+import com.example.nha_hang_duy_den.repository.BillRepository;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,8 +42,13 @@ import java.util.Map;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder>{
     private Context context;
 
-    //    StorageReference storageRef =  FirebaseStorage.getInstance().getReference();
+    BillRepository billRepository;
     private List<Menu> menuList;
+    String tableAdd;
+
+    public void setBundle(String a) {
+        this.tableAdd = a;
+    }
     public MenuAdapter (Context context ) {
         this.context = context;
 //        this.bundle = bundle;
@@ -63,8 +77,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         Glide.with(context).load(menu.getImgPathFood()).override(200, 200) // resizing
                 .centerCrop()
                 .into(holder.imageView);  // imageview object
-
-
         holder.btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +112,55 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                 popupMenu.show();
             }
         });
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(tableAdd.equals("Chưa chọn")) {
 
+                }else {
+
+                    Toast.makeText(v.getContext(),tableAdd,Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(v.getContext());
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.dialog_add_food);
+
+
+                    Window window = dialog.getWindow();
+                    if (window == null){
+                        return;
+                    }
+                    window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                    window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                    WindowManager.LayoutParams layoutParams = window.getAttributes();
+                    layoutParams.gravity = Gravity.CENTER;
+                    window.setAttributes(layoutParams);
+
+                    dialog.setCancelable(true);
+
+                    EditText editNumber = dialog.findViewById(R.id.dia_quantity);
+                    Button cancel =  dialog.findViewById(R.id.dia_to_back);
+                    Button btnOk =  dialog.findViewById(R.id.dia_add);
+
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+                    btnOk.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //handle add food to bill
+                            billRepository.addFoodToTable(Integer.valueOf(tableAdd),menu,Integer.valueOf(editNumber.getText().toString()));
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                }
+            }
+        });
     }
 
     @Override
