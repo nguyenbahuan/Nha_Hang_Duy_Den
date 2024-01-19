@@ -94,25 +94,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.334" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="197dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="92dp"
-        android:text="Nhập lại mật khẩu"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="190dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="92dp"
-        android:text="Nhập mật khẩu"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
