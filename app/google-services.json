@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1009652448119",
+    "firebase_url": "https://duyhaihuan-d6354-default-rtdb.firebaseio.com",
+    "project_id": "duyhaihuan-d6354",
+    "storage_bucket": "duyhaihuan-d6354.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009652448119:android:d1be46191c49dc5d88bf72",
+        "android_client_info": {
+          "package_name": "com.example.nha_hang_duy_den"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-D6A-Mj9jPf2dfwpF1A-9eXhio8TB0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009652448119:android:31d53f6a0776b34f88bf72",
+        "android_client_info": {
+          "package_name": "com.example.quan_ly_nha_hang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-D6A-Mj9jPf2dfwpF1A-9eXhio8TB0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
