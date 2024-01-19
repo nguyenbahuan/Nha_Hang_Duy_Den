@@ -34,6 +34,7 @@ dependencies {
     //room
     implementation ("androidx.room:room-runtime:2.6.1")
     implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
     annotationProcessor ("androidx.room:room-compiler:2.6.1")
     //glide
     implementation ("com.github.bumptech.glide:glide:4.14.2")
