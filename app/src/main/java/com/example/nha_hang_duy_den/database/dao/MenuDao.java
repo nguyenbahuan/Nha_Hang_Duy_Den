@@ -14,6 +14,8 @@ import java.util.List;
 public interface MenuDao {
     @Query("SELECT * FROM menu")
     List<Menu> getAllMenus();
+    @Query("SELECT * FROM menu WHERE id = :id")
+    Menu getMenu(int id);
     @Insert
     void insertMenu(Menu menu);
     @Update

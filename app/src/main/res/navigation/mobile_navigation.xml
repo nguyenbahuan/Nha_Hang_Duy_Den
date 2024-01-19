@@ -30,4 +30,9 @@
         android:name="com.example.nha_hang_duy_den.fragment.StatisticalFragment"
         android:label="fragment_statistical"
         tools:layout="@layout/fragment_statistical" />
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.nha_hang_duy_den.fragment.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" />
 </navigation>
