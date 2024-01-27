@@ -65,22 +65,23 @@ public class login extends AppCompatActivity {
         if(TextUtils.isEmpty(username)){
             Toast.makeText(this,"Vui lòng nhập email!!!", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(password)){
+        else if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Vui lòng nhập password!!!", Toast.LENGTH_SHORT).show();
         }
-        mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull  Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(login.this,MainActivity.class);
-                    startActivity(intent);
+        else {
+            mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(login.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    Toast.makeText(getApplicationContext(),"Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            });
+        }
 
     }
 }

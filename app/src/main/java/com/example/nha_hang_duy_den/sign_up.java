@@ -63,23 +63,25 @@ public class sign_up extends AppCompatActivity {
         if(TextUtils.isEmpty(username)){
             Toast.makeText(this,"Vui lòng nhập email!!!", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(password)){
+        else if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Vui lòng nhập password!!!", Toast.LENGTH_SHORT).show();
         }
-        mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"Đăng kí  thành công", Toast.LENGTH_SHORT).show();
+        else{
+            mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(getApplicationContext(),"Đăng kí  thành công", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(sign_up.this,login.class);
-                    startActivity(intent);
+                        Intent intent = new Intent(sign_up.this,login.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Đăng kí không thành công ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    Toast.makeText(getApplicationContext(), "Đăng kí không thành công ", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            });
+        }
     }
 
     private void addData(){
